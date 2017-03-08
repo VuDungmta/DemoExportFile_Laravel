@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Home');
 });
+
+Auth::routes();
+Route::get('downloadExcel/{type}', 'StudentController@downloadFile');
+Route::get('pdf', 'StudentController@exportPDF');
+Route::get('/home', 'HomeController@index');
